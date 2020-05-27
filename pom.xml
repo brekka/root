@@ -1,112 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.brekka</groupId>
-    <artifactId>root</artifactId>
-    <version>1.2-SNAPSHOT</version>
-    <packaging>pom</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.brekka</groupId>
+  <artifactId>root</artifactId>
+  <version>2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-    <description>
-        Shared root POM for all Brekka projects containing the standard project settings and repository configuration.
-    </description>
+  <description>
+    Shared root POM for all Brekka projects containing the standard project settings and repository configuration.
+  </description>
 
-    <inceptionYear>2013</inceptionYear>
+  <inceptionYear>2013</inceptionYear>
 
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
-    <developers>
-        <developer>
-            <name>Andrew Taylor</name>
-            <email>andrew@brekka.org</email>
-            <timezone>GMT</timezone>
-        </developer>
-    </developers>
+  <developers>
+    <developer>
+      <name>Andrew Taylor</name>
+      <email>andrew@brekka.org</email>
+      <timezone>GMT</timezone>
+    </developer>
+  </developers>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.11</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                        <encoding>utf-8</encoding>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>2.4</version>
-                    <configuration>
-                        <archive>
-                            <index>true</index>
-                            <manifestEntries>
-                                <Build-Date>${maven.build.timestamp}</Build-Date>
-                            </manifestEntries>
-                        </archive>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-    <distributionManagement>
-        <repository>
-            <id>brekka.org</id>
-            <url>https://brekka.org/maven/content/repositories/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>brekka.org</id>
-            <url>https://brekka.org/maven/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-    
-    <scm>
-        <url>https://github.com/brekka/root.git</url>
-        <connection>https://github.com/brekka/root.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/brekka/root.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <encoding>utf-8</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.0.1</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+          <configuration>
+            <tagNameFormat>v@{project.version}</tagNameFormat>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.1.1</version>
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Build-Date>${maven.build.timestamp}</Build-Date>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>2.19</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>brekka.org</id>
+      <url>https://brekka.org/maven/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>brekka.org</id>
+      <url>https://brekka.org/maven/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <scm>
+    <url>https://github.com/brekka/root.git</url>
+    <connection>https://github.com/brekka/root.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/brekka/root.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 </project>
 
